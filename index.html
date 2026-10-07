@@ -122,7 +122,6 @@
 <body>
 
 <div class="container">
-  <!-- Panell que només veurà el mestre quan obri l'enllaç generat -->
   <div id="teacherPanel" class="teacher-panel">
     <h3>👨‍🏫 Mode Mestre Activat</h3>
     <p id="teacherPanelText">Carregant resultats de l'alumne/a...</p>
@@ -148,7 +147,7 @@
       <div class="ref-card c-rarament-t"><div>RARAMENT</div><div class="ref-pct">10%</div><div class="ref-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="ref-math">Molt improbable</div></div>
       <div class="ref-card c-tant-t"><div>DE TANT EN TANT</div><div class="ref-pct">25%</div><div class="ref-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="ref-math">Poc probable</div></div>
       <div class="ref-card c-meitat-t"><div>LA MEITAT DE VEGADES</div><div class="ref-pct">50%</div><div class="ref-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="ref-math">Equiprobable</div></div>
-      <div class="ref-card c-bastant-t"><div>BASTANT</div><div class="ref-pct">75%</div><div class="ref-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="ref-math">Probable</div></div>
+      <div class="ref-card c-bastant-t"><div>BASTANT</div><div class="ref-pct">75%</div><div class="ref-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span></div><div class="ref-math">Probable</div></div>
       <div class="ref-card c-gairebe-t"><div>GAIREBÉ SEMPRE</div><div class="ref-pct">90%</div><div class="ref-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span></div><div class="ref-math">Molt probable</div></div>
       <div class="ref-card c-sempre-t"><div>SEMPRE</div><div class="ref-pct">100%</div><div class="ref-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span></div><div class="ref-math">Segur</div></div>
     </div>
@@ -160,13 +159,13 @@
     <p style="font-size: 0.9rem; color: #64748B; margin-top: -8px; margin-bottom: 16px;">Fes clic sobre una paraula del banc i després fes clic a la casella del percentatge corresponent per col·locar-la.</p>
     <div class="interactive-line-container">
       <div class="word-bank" id="wordBank">
-        <div class="draggable-word c-meitat" id="w50" data-val="50" onclick="selectWord(this)">LA MEITAT DE VEGADES</div>
-        <div class="draggable-word c-mai" id="w0" data-val="0" onclick="selectWord(this)">MAI</div>
-        <div class="draggable-word c-sempre" id="w100" data-val="100" onclick="selectWord(this)">SEMPRE</div>
-        <div class="draggable-word c-tant" id="w25" data-val="25" onclick="selectWord(this)">DE TANT EN TANT</div>
-        <div class="draggable-word c-bastant" id="w75" data-val="75" onclick="selectWord(this)">BASTANT</div>
-        <div class="draggable-word c-rarament" id="w10" data-val="10" onclick="selectWord(this)">RARAMENT</div>
-        <div class="draggable-word c-gairebe" id="w90" data-val="90" onclick="selectWord(this)">GAIREBÉ SEMPRE</div>
+        <div class="draggable-word c-meitat" id="w50" data-val="50" data-code="3" onclick="selectWord(this)">LA MEITAT DE VEGADES</div>
+        <div class="draggable-word c-mai" id="w0" data-val="0" data-code="0" onclick="selectWord(this)">MAI</div>
+        <div class="draggable-word c-sempre" id="w100" data-val="100" data-code="6" onclick="selectWord(this)">SEMPRE</div>
+        <div class="draggable-word c-tant" id="w25" data-val="25" data-code="2" onclick="selectWord(this)">DE TANT EN TANT</div>
+        <div class="draggable-word c-bastant" id="w75" data-val="75" data-code="4" onclick="selectWord(this)">BASTANT</div>
+        <div class="draggable-word c-rarament" id="w10" data-val="10" data-code="1" onclick="selectWord(this)">RARAMENT</div>
+        <div class="draggable-word c-gairebe" id="w90" data-val="90" data-code="5" onclick="selectWord(this)">GAIREBÉ SEMPRE</div>
       </div>
 
       <div class="gradient-line"></div>
@@ -271,7 +270,6 @@
     </div>
   </section>
 
-  <!-- Botons Generals -->
   <div class="actions">
     <button class="btn btn-secondary" onclick="generateTeacherLink()">🔗 Copiar Enllaç per al Mestre</button>
     <button class="btn btn-celebrate" id="celebrateBtn" onclick="triggerConfetti()">🎉 Celebrar Feina Feta!</button>
@@ -383,93 +381,101 @@
     confetti({ particleCount: 120, spread: 70, origin: { y: 0.6 } });
   }
 
-  /* GENERACIÓ D'ENLLAÇ CURT PER AL MESTRE EN BASE64 */
+  /* SISTEMA COMPACTE PER GENERAR UN ENLLAÇ ULTRA CURT */
   function generateTeacherLink() {
-    const data = {
-      n: document.getElementById('studentName').value,
-      g: document.getElementById('studentGroup').value,
-      slots: Array.from(document.querySelectorAll('.drop-slot')).map(s => s.children[0] ? s.children[0].id : ''),
-      t: [document.getElementById('e3_t1').value, document.getElementById('e3_t2').value, document.getElementById('e3_t3').value],
-      s: [document.getElementById('e3_s1').value, document.getElementById('e3_s2').value, document.getElementById('e3_s3').value],
-      r: [
-        document.querySelector('input[name="p1"]:checked')?.value || '',
-        document.querySelector('input[name="p2"]:checked')?.value || '',
-        document.querySelector('input[name="p3"]:checked')?.value || ''
-      ]
-    };
+    const nom = encodeURIComponent(document.getElementById('studentName').value.trim());
+    const grup = encodeURIComponent(document.getElementById('studentGroup').value.trim());
 
-    // Codificació ultra compacta en URL
-    const jsonStr = JSON.stringify(data);
-    const encoded = btoa(encodeURIComponent(jsonStr));
-    const url = window.location.origin + window.location.pathname + '#m=' + encoded;
+    // Codificació Ex 2: 7 digits (0-6) o _ si està buit
+    const slots = Array.from(document.querySelectorAll('.drop-slot'))
+      .map(s => s.children[0] ? s.children[0].getAttribute('data-code') : 'x')
+      .join('');
+
+    // Codificació Ex 3: Textos separats per | i opcions per codi de 1 digit
+    const t1 = encodeURIComponent(document.getElementById('e3_t1').value.trim());
+    const t2 = encodeURIComponent(document.getElementById('e3_t2').value.trim());
+    const t3 = encodeURIComponent(document.getElementById('e3_t3').value.trim());
+
+    const s1 = document.getElementById('e3_s1').value || 'x';
+    const s2 = document.getElementById('e3_s2').value || 'x';
+    const s3 = document.getElementById('e3_s3').value || 'x';
+
+    const r1 = document.querySelector('input[name="p1"]:checked')?.value || 'x';
+    const r2 = document.querySelector('input[name="p2"]:checked')?.value || 'x';
+    const r3 = document.querySelector('input[name="p3"]:checked')?.value || 'x';
+
+    // Cadena ultra compacta
+    const compactData = `${nom}~${grup}~${slots}~${s1},${s2},${s3}~${r1}${r2}${r3}~${t1}~${t2}~${t3}`;
+    const url = window.location.origin + window.location.pathname + '#m=' + compactData;
 
     navigator.clipboard.writeText(url).then(() => {
-      alert("✅ Enllaç copiat al portapapers!\nEnganxa'l i envia'l al teu mestre/a perquè pugui veure els teus resultats.");
+      alert("✅ Enllaç ultra curt copiat al portapapers!\nEnganxa'l i envia'l al teu mestre/a.");
     }).catch(() => {
       prompt("Copia aquest enllaç per enviar-lo al mestre:", url);
     });
   }
 
-  /* LECTURA AUTOMÀTICA QUAN EL MESTRE OBRI L'ENLLAÇ */
+  /* DESCODIFICACIÓ COMPACTA EN CARREGAR LA PÀGINA */
   window.addEventListener('load', () => {
     const hash = window.location.hash;
     if (hash.startsWith('#m=')) {
       try {
-        const encoded = hash.replace('#m=', '');
-        const jsonStr = decodeURIComponent(atob(encoded));
-        const data = JSON.parse(jsonStr);
+        const compactData = hash.replace('#m=', '');
+        const parts = compactData.split('~');
 
-        // Omplir dades de l'alumne
-        document.getElementById('studentName').value = data.n || '';
-        document.getElementById('studentGroup').value = data.g || '';
+        const nom = decodeURIComponent(parts[0] || '');
+        const grup = decodeURIComponent(parts[1] || '');
+        const slotsCode = parts[2] || 'xxxxxxx';
+        const selectCodes = (parts[3] || 'x,x,x').split(',');
+        const radioCodes = parts[4] || 'xxx';
+        const t1 = decodeURIComponent(parts[5] || '');
+        const t2 = decodeURIComponent(parts[6] || '');
+        const t3 = decodeURIComponent(parts[7] || '');
 
-        // Carregar caselles Ex 2
-        if (data.slots) {
-          const slots = document.querySelectorAll('.drop-slot');
-          data.slots.forEach((wordId, idx) => {
-            if (wordId) {
-              const wordEl = document.getElementById(wordId);
-              if (wordEl && slots[idx]) slots[idx].appendChild(wordEl);
-            }
-          });
-        }
+        // Omplir dades personals
+        document.getElementById('studentName').value = nom;
+        document.getElementById('studentGroup').value = grup;
 
-        // Carregar frases i selectors Ex 3
-        if (data.t) {
-          document.getElementById('e3_t1').value = data.t[0] || '';
-          document.getElementById('e3_t2').value = data.t[1] || '';
-          document.getElementById('e3_t3').value = data.t[2] || '';
-        }
-        if (data.s) {
-          document.getElementById('e3_s1').value = data.s[0] || '';
-          document.getElementById('e3_s2').value = data.s[1] || '';
-          document.getElementById('e3_s3').value = data.s[2] || '';
-        }
+        // Restaurar Ex 2
+        const slots = document.querySelectorAll('.drop-slot');
+        slotsCode.split('').forEach((code, idx) => {
+          if (code !== 'x') {
+            const wordEl = document.querySelector(`.draggable-word[data-code="${code}"]`);
+            if (wordEl && slots[idx]) slots[idx].appendChild(wordEl);
+          }
+        });
 
-        // Carregar opcions Ex 4
-        if (data.r) {
-          if (data.r[0]) { const r = document.querySelector(`input[name="p1"][value="${data.r[0]}"]`); if (r) r.checked = true; }
-          if (data.r[1]) { const r = document.querySelector(`input[name="p2"][value="${data.r[1]}"]`); if (r) r.checked = true; }
-          if (data.r[2]) { const r = document.querySelector(`input[name="p3"][value="${data.r[2]}"]`); if (r) r.checked = true; }
-        }
+        // Restaurar Ex 3
+        document.getElementById('e3_t1').value = t1;
+        document.getElementById('e3_t2').value = t2;
+        document.getElementById('e3_t3').value = t3;
+        
+        if (selectCodes[0] !== 'x') document.getElementById('e3_s1').value = selectCodes[0];
+        if (selectCodes[1] !== 'x') document.getElementById('e3_s2').value = selectCodes[1];
+        if (selectCodes[2] !== 'x') document.getElementById('e3_s3').value = selectCodes[2];
 
-        // Executar correccions automàtiques
+        // Restaurar Ex 4
+        if (radioCodes[0] !== 'x') { const r = document.querySelector(`input[name="p1"][value="${radioCodes[0]}"]`); if(r) r.checked = true; }
+        if (radioCodes[1] !== 'x') { const r = document.querySelector(`input[name="p2"][value="${radioCodes[1]}"]`); if(r) r.checked = true; }
+        if (radioCodes[2] !== 'x') { const r = document.querySelector(`input[name="p3"][value="${radioCodes[2]}"]`); if(r) r.checked = true; }
+
+        // Executar correcció automàtica
         const e2 = checkEx2();
         const e3 = checkEx3();
         const e4 = checkEx4();
 
-        // Mostrar panell d'Avaluació del Mestre
+        // Mostrar panell d'Avaluació
         const totalEncerts = e2 + e3 + e4;
         const totalPossible = 13;
         const panel = document.getElementById('teacherPanel');
         const text = document.getElementById('teacherPanelText');
         
         panel.style.display = 'block';
-        text.innerHTML = `Visualitzant el treball de: <strong>${data.n || 'Sense nom'}</strong> (${data.g || 'Sense grup'}).<br>` +
+        text.innerHTML = `Visualitzant el treball de: <strong>${nom || 'Sense nom'}</strong> (${grup || 'Sense grup'}).<br>` +
                        `<strong>Puntuació automàtica:</strong> ${totalEncerts} de ${totalPossible} encerts totals (${Math.round((totalEncerts/totalPossible)*100)}%).`;
 
       } catch (e) {
-        console.error("Error en carregar les dades de l'enllaç del mestre", e);
+        console.error("Error en carregar l'enllaç compacte", e);
       }
     }
   });
