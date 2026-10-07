@@ -31,7 +31,7 @@
     body { background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; display: flex; justify-content: center; }
     .container { max-width: 950px; width: 100%; background: var(--card-bg); padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01); }
     
-    header { background: linear-gradient(135deg, #1E293B, #3B82F6); color: white; padding: 25px; border-radius: 12px; margin-bottom: 30px; }
+    header { background: linear-gradient(135deg, #1E293B, #3B82F6); color: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; }
     h1 { margin: 0 0 8px 0; font-size: 1.75rem; text-align: center; font-weight: 700; letter-spacing: -0.025em; }
     .student-info { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
     .student-info input { flex: 1; min-width: 200px; padding: 12px 15px; border-radius: 8px; border: none; font-size: 0.95rem; background: rgba(255, 255, 255, 0.95); color: #0F172A; }
@@ -40,60 +40,30 @@
     .progress-container { background: rgba(255, 255, 255, 0.2); border-radius: 10px; height: 10px; width: 100%; margin-top: 20px; overflow: hidden; }
     .progress-bar { background: #34D399; height: 100%; width: 0%; transition: width 0.4s ease; }
     
+    /* Panell Mode Mestre */
+    .teacher-panel { background: #EFF6FF; border: 2px solid #3B82F6; padding: 15px 20px; border-radius: 10px; margin-bottom: 25px; display: none; }
+    .teacher-panel h3 { margin: 0 0 5px 0; color: #1E40AF; font-size: 1.1rem; }
+    .teacher-panel p { margin: 0; color: #1E3A8A; font-size: 0.95rem; }
+
     section { margin-bottom: 35px; padding-bottom: 25px; border-bottom: 1px solid var(--border); }
     h2 { color: var(--primary); font-size: 1.25rem; margin-bottom: 18px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
     
-    /* Targetes de Mai a Sempre (Fons Blanc) */
-    .reference-grid { 
-      display: flex; 
-      gap: 6px; 
-      justify-content: space-between;
-      width: 100%;
-    }
-    .ref-card { 
-      flex: 1;
-      min-width: 0; 
-      padding: 12px 4px; 
-      border-radius: 10px; 
-      text-align: center; 
-      background-color: #FFFFFF;
-      border: 2px solid var(--border);
-      font-weight: 700; 
-      font-size: 0.7rem; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: space-between; 
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); 
-      line-height: 1.15;
-    }
+    /* Targetes de Mai a Sempre */
+    .reference-grid { display: flex; gap: 6px; justify-content: space-between; width: 100%; }
+    .ref-card { flex: 1; min-width: 0; padding: 12px 4px; border-radius: 10px; text-align: center; background-color: #FFFFFF; border: 2px solid var(--border); font-weight: 700; font-size: 0.7rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); line-height: 1.15; }
     .ref-pct { font-size: 1.1rem; font-weight: 800; margin: 4px 0; }
     .ref-dots { display: flex; justify-content: center; gap: 2px; margin-top: 4px; }
     .dot { width: 5px; height: 5px; border-radius: 50%; background-color: #E2E8F0; }
     .ref-math { font-size: 0.65rem; font-style: normal; margin-top: 4px; font-weight: 600; }
 
-    /* Classes de color per als elements text/boletes */
-    .c-mai-t { color: var(--c-mai); border-color: #FCA5A5; }
-    .c-mai-t .dot.active { background-color: var(--c-mai); }
+    .c-mai-t { color: var(--c-mai); border-color: #FCA5A5; } .c-mai-t .dot.active { background-color: var(--c-mai); }
+    .c-rarament-t { color: var(--c-rarament); border-color: #FDBA74; } .c-rarament-t .dot.active { background-color: var(--c-rarament); }
+    .c-tant-t { color: var(--c-tant); border-color: #FDE68A; } .c-tant-t .dot.active { background-color: var(--c-tant); }
+    .c-meitat-t { color: var(--c-meitat); border-color: #FDE68A; } .c-meitat-t .dot.active { background-color: var(--c-meitat); }
+    .c-bastant-t { color: var(--c-bastant); border-color: #6EE7B7; } .c-bastant-t .dot.active { background-color: var(--c-bastant); }
+    .c-gairebe-t { color: var(--c-gairebe); border-color: #67E8F9; } .c-gairebe-t .dot.active { background-color: var(--c-gairebe); }
+    .c-sempre-t { color: var(--c-sempre); border-color: #93C5FD; } .c-sempre-t .dot.active { background-color: var(--c-sempre); }
 
-    .c-rarament-t { color: var(--c-rarament); border-color: #FDBA74; }
-    .c-rarament-t .dot.active { background-color: var(--c-rarament); }
-
-    .c-tant-t { color: var(--c-tant); border-color: #FDE68A; }
-    .c-tant-t .dot.active { background-color: var(--c-tant); }
-
-    .c-meitat-t { color: var(--c-meitat); border-color: #FDE68A; }
-    .c-meitat-t .dot.active { background-color: var(--c-meitat); }
-
-    .c-bastant-t { color: var(--c-bastant); border-color: #6EE7B7; }
-    .c-bastant-t .dot.active { background-color: var(--c-bastant); }
-
-    .c-gairebe-t { color: var(--c-gairebe); border-color: #67E8F9; }
-    .c-gairebe-t .dot.active { background-color: var(--c-gairebe); }
-
-    .c-sempre-t { color: var(--c-sempre); border-color: #93C5FD; }
-    .c-sempre-t .dot.active { background-color: var(--c-sempre); }
-
-    /* Colors de les etiquetes arrossegables */
     .c-mai { background-color: var(--c-mai); }
     .c-rarament { background-color: var(--c-rarament); }
     .c-tant { background-color: var(--c-tant); }
@@ -120,41 +90,31 @@
     .drop-slot.incorrect { border-color: var(--error) !important; background-color: #FDE8E8 !important; border-style: solid !important; }
 
     /* Activitats */
-    .phrase-card { background: #F8FAFC; border: 1px solid var(--border); border-radius: 10px; padding: 18px; margin-bottom: 15px; position: relative; transition: all 0.3s ease; }
+    .phrase-card { background: #F8FAFC; border: 1px solid var(--border); border-radius: 10px; padding: 18px; margin-bottom: 15px; position: relative; }
     .phrase-header { font-weight: 600; margin-bottom: 10px; color: #334155; font-size: 0.95rem; }
     .phrase-inputs { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; }
-    @media (max-width: 600px) { 
-      .phrase-inputs { grid-template-columns: 1fr; } 
-      .reference-grid { flex-wrap: wrap; }
-      .ref-card { min-width: 28%; }
-    }
+    @media (max-width: 600px) { .phrase-inputs { grid-template-columns: 1fr; } .reference-grid { flex-wrap: wrap; } .ref-card { min-width: 28%; } }
     input[type="text"], select { width: 100%; padding: 10px 12px; border: 1px solid #CBD5E1; border-radius: 6px; font-size: 0.9rem; background: white; color: var(--text); }
-    input[type="text"]:focus, select:focus { outline: none; border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15); }
-
+    
     /* Multiple Choice */
-    .mc-option { display: block; margin: 8px 0; padding: 12px 14px; background: white; border-radius: 6px; cursor: pointer; border: 1px solid #E2E8F0; font-size: 0.9rem; transition: all 0.15s; }
-    .mc-option:hover { background: #F1F5F9; border-color: #CBD5E1; }
+    .mc-option { display: block; margin: 8px 0; padding: 12px 14px; background: white; border-radius: 6px; cursor: pointer; border: 1px solid #E2E8F0; font-size: 0.9rem; }
     .mc-option input { margin-right: 10px; accent-color: var(--secondary); }
     .mc-option.opt-correct { background-color: #DEF7EC; border-color: #31C48D; font-weight: 600; }
     .mc-option.opt-incorrect { background-color: #FDE8E8; border-color: #F98080; }
 
-    /* Botons de correcció per exercici i resums */
     .exercise-action { margin-top: 15px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
     .btn-check { background-color: #0284C7; color: white; padding: 8px 16px; border-radius: 6px; font-weight: 600; border: none; cursor: pointer; font-size: 0.85rem; }
-    .btn-check:hover { background-color: #0369A1; }
     
-    .section-feedback { width: 100%; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; display: none; margin-top: 5px; }
+    .section-feedback { width: 100%; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; display: none; }
     .section-feedback.show { display: block; }
     .section-feedback.perfect { background-color: #DEF7EC; color: #03543F; border: 1px solid #84E1BC; }
     .section-feedback.has-errors { background-color: #FEF08A; color: #713F12; border: 1px solid #FDE047; }
 
-    /* Footer / Accions Generals */
     .actions { display: flex; gap: 15px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
-    button.btn { padding: 12px 22px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: all 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    button.btn { padding: 12px 22px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 0.95rem; transition: all 0.2s; }
     .btn-secondary { background: #3B82F6; color: white; }
-    .btn-secondary:hover { background: #2563EB; transform: translateY(-1px); }
+    .btn-secondary:hover { background: #2563EB; }
     .btn-celebrate { background: #10B981; color: white; display: none; }
-    .btn-celebrate:hover { background: #059669; }
     
     .teacher-credit { text-align: center; margin-top: 30px; font-size: 0.85rem; color: #94A3B8; border-top: 1px solid var(--border); padding-top: 20px; font-weight: 500; }
   </style>
@@ -162,6 +122,12 @@
 <body>
 
 <div class="container">
+  <!-- Panell que només veurà el mestre quan obri l'enllaç generat -->
+  <div id="teacherPanel" class="teacher-panel">
+    <h3>👨‍🏫 Mode Mestre Activat</h3>
+    <p id="teacherPanelText">Carregant resultats de l'alumne/a...</p>
+  </div>
+
   <header>
     <h1>PCMAT PD5: DE LES PARAULES ALS PERCENTATGES</h1>
     <p style="margin:0; text-align:center; font-size:0.95rem; opacity: 0.9;">Relacionem el llenguatge quotidià amb les matemàtiques</p>
@@ -174,118 +140,45 @@
     </div>
   </header>
 
-  <!-- 1. GUIA VISUAL DE REFERÈNCIA -->
+  <!-- 1. GUIA VISUAL -->
   <section>
     <h2>1. Guia Visual de Referència</h2>
     <div class="reference-grid">
-      <div class="ref-card c-mai-t">
-        <div>MAI</div>
-        <div class="ref-pct">0%</div>
-        <div class="ref-dots">
-          <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        </div>
-        <div class="ref-math">Impossible</div>
-      </div>
-      <div class="ref-card c-rarament-t">
-        <div>RARAMENT</div>
-        <div class="ref-pct">10%</div>
-        <div class="ref-dots">
-          <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        </div>
-        <div class="ref-math">Molt improbable</div>
-      </div>
-      <div class="ref-card c-tant-t">
-        <div>DE TANT EN TANT</div>
-        <div class="ref-pct">25%</div>
-        <div class="ref-dots">
-          <span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        </div>
-        <div class="ref-math">Poc probable</div>
-      </div>
-      <div class="ref-card c-meitat-t">
-        <div>LA MEITAT DE VEGADES</div>
-        <div class="ref-pct">50%</div>
-        <div class="ref-dots">
-          <span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        </div>
-        <div class="ref-math">Equiprobable</div>
-      </div>
-      <div class="ref-card c-bastant-t">
-        <div>BASTANT</div>
-        <div class="ref-pct">75%</div>
-        <div class="ref-dots">
-          <span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        </div>
-        <div class="ref-math">Probable</div>
-      </div>
-      <div class="ref-card c-gairebe-t">
-        <div>GAIREBÉ SEMPRE</div>
-        <div class="ref-pct">90%</div>
-        <div class="ref-dots">
-          <span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span>
-        </div>
-        <div class="ref-math">Molt probable</div>
-      </div>
-      <div class="ref-card c-sempre-t">
-        <div>SEMPRE</div>
-        <div class="ref-pct">100%</div>
-        <div class="ref-dots">
-          <span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span>
-        </div>
-        <div class="ref-math">Segur</div>
-      </div>
+      <div class="ref-card c-mai-t"><div>MAI</div><div class="ref-pct">0%</div><div class="ref-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="ref-math">Impossible</div></div>
+      <div class="ref-card c-rarament-t"><div>RARAMENT</div><div class="ref-pct">10%</div><div class="ref-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="ref-math">Molt improbable</div></div>
+      <div class="ref-card c-tant-t"><div>DE TANT EN TANT</div><div class="ref-pct">25%</div><div class="ref-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="ref-math">Poc probable</div></div>
+      <div class="ref-card c-meitat-t"><div>LA MEITAT DE VEGADES</div><div class="ref-pct">50%</div><div class="ref-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="ref-math">Equiprobable</div></div>
+      <div class="ref-card c-bastant-t"><div>BASTANT</div><div class="ref-pct">75%</div><div class="ref-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="ref-math">Probable</div></div>
+      <div class="ref-card c-gairebe-t"><div>GAIREBÉ SEMPRE</div><div class="ref-pct">90%</div><div class="ref-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span></div><div class="ref-math">Molt probable</div></div>
+      <div class="ref-card c-sempre-t"><div>SEMPRE</div><div class="ref-pct">100%</div><div class="ref-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span></div><div class="ref-math">Segur</div></div>
     </div>
   </section>
 
-  <!-- 2. ORDENA LA LÍNIA DE PROBABILITAT -->
+  <!-- 2. ORDENA LA LÍNIA -->
   <section>
     <h2>2. Ordena la Línia de Probabilitat</h2>
     <p style="font-size: 0.9rem; color: #64748B; margin-top: -8px; margin-bottom: 16px;">Fes clic sobre una paraula del banc i després fes clic a la casella del percentatge corresponent per col·locar-la.</p>
     <div class="interactive-line-container">
-      
-      <!-- Banc de Paraules -->
       <div class="word-bank" id="wordBank">
-        <div class="draggable-word c-meitat" data-val="50" onclick="selectWord(this)">LA MEITAT DE VEGADES</div>
-        <div class="draggable-word c-mai" data-val="0" onclick="selectWord(this)">MAI</div>
-        <div class="draggable-word c-sempre" data-val="100" onclick="selectWord(this)">SEMPRE</div>
-        <div class="draggable-word c-tant" data-val="25" onclick="selectWord(this)">DE TANT EN TANT</div>
-        <div class="draggable-word c-bastant" data-val="75" onclick="selectWord(this)">BASTANT</div>
-        <div class="draggable-word c-rarament" data-val="10" onclick="selectWord(this)">RARAMENT</div>
-        <div class="draggable-word c-gairebe" data-val="90" onclick="selectWord(this)">GAIREBÉ SEMPRE</div>
+        <div class="draggable-word c-meitat" id="w50" data-val="50" onclick="selectWord(this)">LA MEITAT DE VEGADES</div>
+        <div class="draggable-word c-mai" id="w0" data-val="0" onclick="selectWord(this)">MAI</div>
+        <div class="draggable-word c-sempre" id="w100" data-val="100" onclick="selectWord(this)">SEMPRE</div>
+        <div class="draggable-word c-tant" id="w25" data-val="25" onclick="selectWord(this)">DE TANT EN TANT</div>
+        <div class="draggable-word c-bastant" id="w75" data-val="75" onclick="selectWord(this)">BASTANT</div>
+        <div class="draggable-word c-rarament" id="w10" data-val="10" onclick="selectWord(this)">RARAMENT</div>
+        <div class="draggable-word c-gairebe" id="w90" data-val="90" onclick="selectWord(this)">GAIREBÉ SEMPRE</div>
       </div>
 
       <div class="gradient-line"></div>
 
-      <!-- Caselles -->
       <div class="drop-slots">
-        <div class="slot-container">
-          <div class="slot-label">0%</div>
-          <div class="drop-slot" data-target="0" onclick="placeWord(this)"></div>
-        </div>
-        <div class="slot-container">
-          <div class="slot-label">10%</div>
-          <div class="drop-slot" data-target="10" onclick="placeWord(this)"></div>
-        </div>
-        <div class="slot-container">
-          <div class="slot-label">25%</div>
-          <div class="drop-slot" data-target="25" onclick="placeWord(this)"></div>
-        </div>
-        <div class="slot-container">
-          <div class="slot-label">50%</div>
-          <div class="drop-slot" data-target="50" onclick="placeWord(this)"></div>
-        </div>
-        <div class="slot-container">
-          <div class="slot-label">75%</div>
-          <div class="drop-slot" data-target="75" onclick="placeWord(this)"></div>
-        </div>
-        <div class="slot-container">
-          <div class="slot-label">90%</div>
-          <div class="drop-slot" data-target="90" onclick="placeWord(this)"></div>
-        </div>
-        <div class="slot-container">
-          <div class="slot-label">100%</div>
-          <div class="drop-slot" data-target="100" onclick="placeWord(this)"></div>
-        </div>
+        <div class="slot-container"><div class="slot-label">0%</div><div class="drop-slot" data-target="0" onclick="placeWord(this)"></div></div>
+        <div class="slot-container"><div class="slot-label">10%</div><div class="drop-slot" data-target="10" onclick="placeWord(this)"></div></div>
+        <div class="slot-container"><div class="slot-label">25%</div><div class="drop-slot" data-target="25" onclick="placeWord(this)"></div></div>
+        <div class="slot-container"><div class="slot-label">50%</div><div class="drop-slot" data-target="50" onclick="placeWord(this)"></div></div>
+        <div class="slot-container"><div class="slot-label">75%</div><div class="drop-slot" data-target="75" onclick="placeWord(this)"></div></div>
+        <div class="slot-container"><div class="slot-label">90%</div><div class="drop-slot" data-target="90" onclick="placeWord(this)"></div></div>
+        <div class="slot-container"><div class="slot-label">100%</div><div class="drop-slot" data-target="100" onclick="placeWord(this)"></div></div>
       </div>
 
       <div class="exercise-action">
@@ -295,16 +188,16 @@
     </div>
   </section>
 
-  <!-- 3. DEL LLENGUATGE QUOTIDIÀ ALS PERCENTATGES -->
+  <!-- 3. ACTIVITAT 3 -->
   <section>
     <h2>3. Del Llenguatge Quotidià a les Matemàtiques</h2>
     <p style="font-size: 0.9rem; color: #64748B; margin-top: -8px; margin-bottom: 16px;">Escriu una frase pròpia utilitzant la paraula indicada i tria la descripció matemàtica correcta.</p>
 
     <div class="phrase-card">
-      <div class="phrase-header">1. Utilitza la paraula "SEMPRE" (Ex: Rentar-se les dents, esmorzar...)</div>
+      <div class="phrase-header">1. Utilitza la paraula "SEMPRE"</div>
       <div class="phrase-inputs">
-        <input type="text" class="act1-text" placeholder="Escriu la teva frase aquí..." oninput="checkProgress()">
-        <select class="act1-select" data-correct="segur" onchange="checkProgress()">
+        <input type="text" id="e3_t1" class="act1-text" placeholder="Escriu la teva frase aquí..." oninput="checkProgress()">
+        <select id="e3_s1" class="act1-select" data-correct="segur" onchange="checkProgress()">
           <option value="">-- Selecciona --</option>
           <option value="segur">Segur (100%)</option>
           <option value="probable">Molt probable (90%)</option>
@@ -315,10 +208,10 @@
     </div>
 
     <div class="phrase-card">
-      <div class="phrase-header">2. Utilitza la paraula "MAI" (Ex: Anar en coet a l'escola...)</div>
+      <div class="phrase-header">2. Utilitza la paraula "MAI"</div>
       <div class="phrase-inputs">
-        <input type="text" class="act1-text" placeholder="Escriu la teva frase aquí..." oninput="checkProgress()">
-        <select class="act1-select" data-correct="impossible" onchange="checkProgress()">
+        <input type="text" id="e3_t2" class="act1-text" placeholder="Escriu la teva frase aquí..." oninput="checkProgress()">
+        <select id="e3_s2" class="act1-select" data-correct="impossible" onchange="checkProgress()">
           <option value="">-- Selecciona --</option>
           <option value="segur">Segur (100%)</option>
           <option value="probable">Probable (75%)</option>
@@ -329,10 +222,10 @@
     </div>
 
     <div class="phrase-card">
-      <div class="phrase-header">3. Utilitza la paraula "LA MEITAT DE VEGADES" (Ex: Tirar una moneda...)</div>
+      <div class="phrase-header">3. Utilitza la paraula "LA MEITAT DE VEGADES"</div>
       <div class="phrase-inputs">
-        <input type="text" class="act1-text" placeholder="Escriu la teva frase aquí..." oninput="checkProgress()">
-        <select class="act1-select" data-correct="equiprobable" onchange="checkProgress()">
+        <input type="text" id="e3_t3" class="act1-text" placeholder="Escriu la teva frase aquí..." oninput="checkProgress()">
+        <select id="e3_s3" class="act1-select" data-correct="equiprobable" onchange="checkProgress()">
           <option value="">-- Selecciona --</option>
           <option value="equiprobable">Equiprobable / 50% de probabilitat</option>
           <option value="segur">Segur / 100%</option>
@@ -347,7 +240,7 @@
     </div>
   </section>
 
-  <!-- 4. RESOLUCIÓ DE SITUACIONS QUOTIDIANES -->
+  <!-- 4. ACTIVITAT 4 -->
   <section>
     <h2>4. Resolució de Situacions Quotidianes</h2>
 
@@ -380,7 +273,7 @@
 
   <!-- Botons Generals -->
   <div class="actions">
-    <button class="btn btn-secondary" onclick="generateTeacherLink()">Copiar Enllaç per al Mestre</button>
+    <button class="btn btn-secondary" onclick="generateTeacherLink()">🔗 Copiar Enllaç per al Mestre</button>
     <button class="btn btn-celebrate" id="celebrateBtn" onclick="triggerConfetti()">🎉 Celebrar Feina Feta!</button>
   </div>
 
@@ -393,186 +286,193 @@
   let selectedWordElement = null;
 
   function selectWord(el) {
-    if (selectedWordElement) {
-      selectedWordElement.classList.remove('selected');
-    }
+    if (selectedWordElement) selectedWordElement.classList.remove('selected');
     selectedWordElement = el;
     el.classList.add('selected');
   }
 
   function placeWord(slot) {
     if (!selectedWordElement) return;
-
     if (slot.children.length > 0) {
       document.getElementById('wordBank').appendChild(slot.children[0]);
     }
-
     slot.appendChild(selectedWordElement);
     selectedWordElement.classList.remove('selected');
     slot.classList.remove('correct', 'incorrect');
-
     selectedWordElement = null;
     checkProgress();
   }
 
-  /* CORRECCIÓ EXERCICI 2 */
   function checkEx2() {
     const slots = document.querySelectorAll('.drop-slot');
     let correctes = 0;
-    let totals = slots.length;
-
     slots.forEach(slot => {
       slot.classList.remove('correct', 'incorrect');
-      if (slot.children.length > 0) {
-        const word = slot.children[0];
-        if (slot.getAttribute('data-target') === word.getAttribute('data-val')) {
-          slot.classList.add('correct');
-          correctes++;
-        } else {
-          slot.classList.add('incorrect');
-        }
+      if (slot.children.length > 0 && slot.getAttribute('data-target') === slot.children[0].getAttribute('data-val')) {
+        slot.classList.add('correct');
+        correctes++;
       } else {
         slot.classList.add('incorrect');
       }
     });
-
     const feedback = document.getElementById('feedbackEx2');
     feedback.classList.add('show');
-    if (correctes === totals) {
-      feedback.className = 'section-feedback show perfect';
-      feedback.textContent = `🎯 Excel·lent! Tot correcte: ${correctes} de ${totals} paraules ben col·locades.`;
-    } else {
-      feedback.className = 'section-feedback show has-errors';
-      feedback.textContent = `🔍 Has tingut ${correctes} encerts i ${totals - correctes} errors. Revisa les caselles marcades en vermell!`;
-    }
+    feedback.className = correctes === 7 ? 'section-feedback show perfect' : 'section-feedback show has-errors';
+    feedback.textContent = correctes === 7 ? '🎯 Excel·lent! 7 de 7 encerts.' : `🔍 ${correctes} de 7 encerts. Comprova les caselles en vermell.`;
     checkProgress();
+    return correctes;
   }
 
-  /* CORRECCIÓ EXERCICI 3 */
   function checkEx3() {
     const selects = document.querySelectorAll('.act1-select');
     let correctes = 0;
-    let totals = selects.length;
-
     selects.forEach(select => {
-      const isCorrect = select.value === select.getAttribute('data-correct');
-      if (isCorrect) {
-        select.style.borderColor = '#10B981';
-        select.style.backgroundColor = '#ECFDF5';
+      if (select.value === select.getAttribute('data-correct')) {
+        select.style.borderColor = '#10B981'; select.style.backgroundColor = '#ECFDF5';
         correctes++;
       } else {
-        select.style.borderColor = '#EF4444';
-        select.style.backgroundColor = '#FDE8E8';
+        select.style.borderColor = '#EF4444'; select.style.backgroundColor = '#FDE8E8';
       }
     });
-
     const feedback = document.getElementById('feedbackEx3');
     feedback.classList.add('show');
-    if (correctes === totals) {
-      feedback.className = 'section-feedback show perfect';
-      feedback.textContent = `🎯 Molt bé! Has associat correctament tots els conceptes (${correctes} de ${totals}).`;
-    } else {
-      feedback.className = 'section-feedback show has-errors';
-      feedback.textContent = `🔍 Has tingut ${correctes} encerts i ${totals - correctes} errors. Comprova els desplegables en vermell.`;
-    }
+    feedback.className = correctes === 3 ? 'section-feedback show perfect' : 'section-feedback show has-errors';
+    feedback.textContent = correctes === 3 ? '🎯 Excel·lent! 3 de 3 desplegables correctes.' : `🔍 ${correctes} de 3 encerts als desplegables.`;
     checkProgress();
+    return correctes;
   }
 
-  /* CORRECCIÓ EXERCICI 4 */
   function checkEx4() {
     const answers = { p1: 'b', p2: 'a', p3: 'b' };
     let correctes = 0;
-    let totals = 3;
-
     Object.keys(answers).forEach((key) => {
       const selected = document.querySelector(`input[name="${key}"]:checked`);
       const card = document.getElementById(`cardP` + key.replace('p', ''));
-      const options = card.querySelectorAll('.mc-option');
-
-      options.forEach(opt => {
+      card.querySelectorAll('.mc-option').forEach(opt => {
         opt.classList.remove('opt-correct', 'opt-incorrect');
         const input = opt.querySelector('input');
-        
-        if (input.value === answers[key]) {
-          opt.classList.add('opt-correct');
-        } else if (input.checked) {
-          opt.classList.add('opt-incorrect');
-        }
+        if (input.value === answers[key]) opt.classList.add('opt-correct');
+        else if (input.checked) opt.classList.add('opt-incorrect');
       });
-
-      if (selected && selected.value === answers[key]) {
-        correctes++;
-      }
+      if (selected && selected.value === answers[key]) correctes++;
     });
-
     const feedback = document.getElementById('feedbackEx4');
     feedback.classList.add('show');
-    if (correctes === totals) {
-      feedback.className = 'section-feedback show perfect';
-      feedback.textContent = `🎯 Fantàstic! Has encertat totes les situacions (${correctes} de ${totals}).`;
-    } else {
-      feedback.className = 'section-feedback show has-errors';
-      feedback.textContent = `🔍 Tens ${correctes} encerts i ${totals - correctes} errors. Les respostes correctes estan ressaltades en verd.`;
-    }
+    feedback.className = correctes === 3 ? 'section-feedback show perfect' : 'section-feedback show has-errors';
+    feedback.textContent = correctes === 3 ? '🎯 Excel·lent! 3 de 3 situacions encertades.' : `🔍 ${correctes} de 3 encerts. Les respostes correctes s'indiquen en verd.`;
     checkProgress();
+    return correctes;
   }
 
-  /* BARRERA DE PROGRÉS GENERAL */
   function checkProgress() {
-    let totalItems = 12;
     let completedItems = 0;
+    if (document.getElementById('studentName').value.trim() !== '') completedItems += 1;
+    if (document.getElementById('studentGroup').value.trim() !== '') completedItems += 1;
 
-    if (document.getElementById('studentName').value.trim() !== '') completedItems++;
-    if (document.getElementById('studentGroup').value.trim() !== '') completedItems++;
+    document.querySelectorAll('.drop-slot').forEach(s => { if(s.children.length > 0) completedItems += 0.5; });
+    document.querySelectorAll('.act1-text').forEach(i => { if(i.value.trim().length > 2) completedItems += 0.5; });
+    document.querySelectorAll('.act1-select').forEach(s => { if(s.value !== '') completedItems += 0.5; });
+    ['p1','p2','p3'].forEach(p => { if(document.querySelector(`input[name="${p}"]:checked`)) completedItems += 0.5; });
 
-    const correctSlots = document.querySelectorAll('.drop-slot.correct').length;
-    completedItems += correctSlots * (3 / 7);
-
-    document.querySelectorAll('.act1-text').forEach(input => {
-      if (input.value.trim().length > 3) completedItems += 0.6;
-    });
-    
-    document.querySelectorAll('.act1-select').forEach(select => {
-      if (select.value === select.getAttribute('data-correct')) completedItems += 0.4;
-    });
-
-    if (document.querySelector('input[name="p1"]:checked')?.value === 'b') completedItems++;
-    if (document.querySelector('input[name="p2"]:checked')?.value === 'a') completedItems++;
-    if (document.querySelector('input[name="p3"]:checked')?.value === 'b') completedItems++;
-
-    let percentage = Math.min(Math.round((completedItems / totalItems) * 100), 100);
-    
-    const progressBar = document.getElementById('progressBar');
-    progressBar.style.width = percentage + '%';
-
-    const celebrateBtn = document.getElementById('celebrateBtn');
-    if (percentage >= 95) {
-      celebrateBtn.style.display = 'inline-block';
-    } else {
-      celebrateBtn.style.display = 'none';
-    }
+    let percentage = Math.min(Math.round((completedItems / 12) * 100), 100);
+    document.getElementById('progressBar').style.width = percentage + '%';
+    document.getElementById('celebrateBtn').style.display = percentage >= 95 ? 'inline-block' : 'none';
   }
 
   function triggerConfetti() {
-    confetti({
-      particleCount: 120,
-      spread: 70,
-      origin: { y: 0.6 }
+    confetti({ particleCount: 120, spread: 70, origin: { y: 0.6 } });
+  }
+
+  /* GENERACIÓ D'ENLLAÇ CURT PER AL MESTRE EN BASE64 */
+  function generateTeacherLink() {
+    const data = {
+      n: document.getElementById('studentName').value,
+      g: document.getElementById('studentGroup').value,
+      slots: Array.from(document.querySelectorAll('.drop-slot')).map(s => s.children[0] ? s.children[0].id : ''),
+      t: [document.getElementById('e3_t1').value, document.getElementById('e3_t2').value, document.getElementById('e3_t3').value],
+      s: [document.getElementById('e3_s1').value, document.getElementById('e3_s2').value, document.getElementById('e3_s3').value],
+      r: [
+        document.querySelector('input[name="p1"]:checked')?.value || '',
+        document.querySelector('input[name="p2"]:checked')?.value || '',
+        document.querySelector('input[name="p3"]:checked')?.value || ''
+      ]
+    };
+
+    // Codificació ultra compacta en URL
+    const jsonStr = JSON.stringify(data);
+    const encoded = btoa(encodeURIComponent(jsonStr));
+    const url = window.location.origin + window.location.pathname + '#m=' + encoded;
+
+    navigator.clipboard.writeText(url).then(() => {
+      alert("✅ Enllaç copiat al portapapers!\nEnganxa'l i envia'l al teu mestre/a perquè pugui veure els teus resultats.");
+    }).catch(() => {
+      prompt("Copia aquest enllaç per enviar-lo al mestre:", url);
     });
   }
 
-  function generateTeacherLink() {
-    const name = document.getElementById('studentName').value || 'Sense nom';
-    const group = document.getElementById('studentGroup').value || 'Sense grup';
-    
-    const text = `Hola! Soc ${name} del grup ${group}. He completat la fitxa "PCMAT PD5: De les Paraules als Percentatges"!`;
-    
-    navigator.clipboard.writeText(text).then(() => {
-      alert("S'ha copiat un resum del teu treball al portapapers per poder-lo enviar al teu mestre/a!");
-    }).catch(() => {
-      alert("Missatge preparat: " + text);
-    });
-  }
+  /* LECTURA AUTOMÀTICA QUAN EL MESTRE OBRI L'ENLLAÇ */
+  window.addEventListener('load', () => {
+    const hash = window.location.hash;
+    if (hash.startsWith('#m=')) {
+      try {
+        const encoded = hash.replace('#m=', '');
+        const jsonStr = decodeURIComponent(atob(encoded));
+        const data = JSON.parse(jsonStr);
+
+        // Omplir dades de l'alumne
+        document.getElementById('studentName').value = data.n || '';
+        document.getElementById('studentGroup').value = data.g || '';
+
+        // Carregar caselles Ex 2
+        if (data.slots) {
+          const slots = document.querySelectorAll('.drop-slot');
+          data.slots.forEach((wordId, idx) => {
+            if (wordId) {
+              const wordEl = document.getElementById(wordId);
+              if (wordEl && slots[idx]) slots[idx].appendChild(wordEl);
+            }
+          });
+        }
+
+        // Carregar frases i selectors Ex 3
+        if (data.t) {
+          document.getElementById('e3_t1').value = data.t[0] || '';
+          document.getElementById('e3_t2').value = data.t[1] || '';
+          document.getElementById('e3_t3').value = data.t[2] || '';
+        }
+        if (data.s) {
+          document.getElementById('e3_s1').value = data.s[0] || '';
+          document.getElementById('e3_s2').value = data.s[1] || '';
+          document.getElementById('e3_s3').value = data.s[2] || '';
+        }
+
+        // Carregar opcions Ex 4
+        if (data.r) {
+          if (data.r[0]) { const r = document.querySelector(`input[name="p1"][value="${data.r[0]}"]`); if (r) r.checked = true; }
+          if (data.r[1]) { const r = document.querySelector(`input[name="p2"][value="${data.r[1]}"]`); if (r) r.checked = true; }
+          if (data.r[2]) { const r = document.querySelector(`input[name="p3"][value="${data.r[2]}"]`); if (r) r.checked = true; }
+        }
+
+        // Executar correccions automàtiques
+        const e2 = checkEx2();
+        const e3 = checkEx3();
+        const e4 = checkEx4();
+
+        // Mostrar panell d'Avaluació del Mestre
+        const totalEncerts = e2 + e3 + e4;
+        const totalPossible = 13;
+        const panel = document.getElementById('teacherPanel');
+        const text = document.getElementById('teacherPanelText');
+        
+        panel.style.display = 'block';
+        text.innerHTML = `Visualitzant el treball de: <strong>${data.n || 'Sense nom'}</strong> (${data.g || 'Sense grup'}).<br>` +
+                       `<strong>Puntuació automàtica:</strong> ${totalEncerts} de ${totalPossible} encerts totals (${Math.round((totalEncerts/totalPossible)*100)}%).`;
+
+      } catch (e) {
+        console.error("Error en carregar les dades de l'enllaç del mestre", e);
+      }
+    }
+  });
 </script>
 </body>
 </html>
